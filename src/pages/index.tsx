@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Link href="/game">
-        <h2>トランプ足し算ゲームへ</h2>
+        <h2>はじめる</h2>
       </Link>
       <Link href="/manual">
         <h3>あそびかた</h3>
