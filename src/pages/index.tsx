@@ -10,8 +10,8 @@ const Home = () => {
       <Link href="/manual">
         <h3>あそびかた</h3>
       </Link>
-      <Link href="/reducer-proto">
-        <h3>Reducer プロト遊び場</h3>
+      <Link href="/counter">
+        <h3>カウンターアプリ(Reducer 使用)</h3>
       </Link>
     </>
   );
