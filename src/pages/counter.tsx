@@ -8,6 +8,11 @@ interface ActionProps {
   type: string;
 }
 
+interface StoreContextProps {
+  state: StateProps;
+  dispatch: ({ type: ActionProps }) => void;
+}
+
 // アクションタイプ
 const ActionTypes = {
   increment: 'increment',
@@ -29,8 +34,22 @@ const reducer = (state: StateProps, action: ActionProps) => {
   }
 };
 
-const Counter = () => {
+// ストアコンテクスト生成
+const StoreContext = React.createContext({} as StoreContextProps);
+
+const App: React.FC = () => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
+
+  return (
+    <StoreContext.Provider value={{ state, dispatch }}>
+      <AppScreen />
+    </StoreContext.Provider>
+  );
+};
+
+const AppScreen: React.FC = () => {
+  const { state, dispatch } = React.useContext(StoreContext);
+
   return (
     <>
       Count: {state.count}
@@ -43,4 +62,5 @@ const Counter = () => {
     </>
   );
 };
-export default Counter;
+
+export default App;
