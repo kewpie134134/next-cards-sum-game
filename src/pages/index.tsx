@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -9,6 +9,9 @@ const Home = () => {
       </Link>
       <Link href="/manual">
         <h3>あそびかた</h3>
+      </Link>
+      <Link href="/reducer-proto">
+        <h3>Reducer プロト遊び場</h3>
       </Link>
     </>
   );
